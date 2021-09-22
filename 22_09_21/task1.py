@@ -1,6 +1,7 @@
 import numpy as np
+import pathlib
 
-filepath = "./lessons/0nyb1470.17d.Z"
+filepath = pathlib.Path("./lessons")
 
 with open(filepath, "rb") as file2r:
     print("opened", filepath.split('/')[2]) 
