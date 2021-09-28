@@ -25,27 +25,11 @@ with file.open('rb') as f:
         s1.append((bts[-1] & 0b00000100) >> 2)
         s2.append((bts[-1] & 0b00010000) >> 4)
         s3.append((bts[-1] & 0b10000000) >> 7)
-n = 0
 
-for i in s1:
-    n += 1
-    if i == 0:
-        print(1/ (n*2 * 10 ** (-9)))
-        break
-n=0
-for i in s2:
-    n += 1
-    if i == 0:
-        print(1/ (n*2 * 10 ** (-9)))
-        break
-
-n=0
-for i in s3:
-    n += 1
-    if i == 0:
-        print(1/ (n*2 * 10 ** (-9)))
-        break
-
+def diff_freq(s):
+    d = np.diff(s)
+    t = np.abs(np.argmax(d) - np.argmin(d)) *2
+    return(1 / t * 10**3 )
 '''
 dtype = [("time", ">i2"), ("values", "u1")]
 data = np.fromfile(file, dtype)
@@ -57,7 +41,7 @@ s1 = 74
 s2 = 37
 s3 = 24
 """
-
+print(diff_freq(s1))
 
 fig = plt.figure()
 
