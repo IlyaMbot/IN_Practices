@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import pathlib
 import struct
 
-directory = pathlib.Path("/home/conpucter/GitHub/try/lessons")
+directory = pathlib.Path("./lessons")
 file = directory / "twinned.dat"
 
 def intensity_searcher(image):

@@ -4,7 +4,7 @@ import pathlib
 import struct
 
 
-directory = pathlib.Path("./lessons")
+directory = pathlib.Path("/home/conpucter/GitHub/try/lessons")
 file = directory / "signals"
 
 t = []
